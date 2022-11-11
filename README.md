@@ -7,3 +7,4 @@
 
 ## Overview
 __G2P__ (**G**enotype **to** **P**henotype) is an integrative environment in form of Singularity container, which not only contains a library of 16 state-of-the-art GS models and 13 evaluation metrics for model evaluation and selection but also provides several stand-alone software and easy-to-use functions for data preprocessing, population analysis, integration of prediction results from multiple models, and refinement of training datasets. G2P provides a comprehensive environment for genomic selection to facilitate the comparison and selection of appropriate model. G2P not only was developed and packaged in a Singularity container, allowing easy installation and upgrade, but also was accessible as an R package.
+
