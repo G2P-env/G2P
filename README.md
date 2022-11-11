@@ -42,19 +42,7 @@ $ export VERSION=1.16.4 OS=linux ARCH=amd64 && \  # Replace the values as needed
   rm go$VERSION.$OS-$ARCH.tar.gz    # Deletes the ``tar`` file
 ```
 ```diff
-+ Green
-- Red
-! Orange
-@@ Pink @@
-# Gray
-```
-+ <span style="color:red">Note: you can vist [Go Downloads page](https://go.dev/dl/) for suitable to the environment you are in </span> +
-```diff
-+ Green
-- Red
-! Orange
-@@ Pink @@
-# Gray
++ Note: you can vist [Go Downloads page](https://go.dev/dl/) for suitable to the environment you are in </span> +
 ```
 
 #### 1.3 Installing Singularity
