@@ -76,3 +76,26 @@ Singularity can be installed via Vagrant Boxes for Windows and Intel cores MacOS
 ```bash
 singularity pull G2P.sif library://mym89757/repo/g2p:latest
 ```
+### Installation of G2P R package 
+![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) __Note__: the functions, like _GSFiltering_, _GSImputation_, _GSTransForm_, _GSRead_ shown in figure ["Overview of G2P" a](https://github.com/G2P-env/G2P/blob/main/figures/Fig%201.png) needs the opearation evironment and stand-alone software on the circle, namely， these function in G2P pcakage can't be performed normally unless the dependencis shown in figure ["Overview of G2P" a](https://github.com/G2P-env/G2P/blob/main/figures/Fig%201.png)(upper semicircle) have been correctly installed and configuration. G2P package can be installed for MacOS, Linux and windows and the functions shown in figure ["Overview of G2P" b](https://github.com/G2P-env/G2P/blob/main/figures/Fig%201.png) can run normally.
+#### 1.  Github install
+```R
+## install dependencies and GOVS
+install.packages(c("ggplot2","brnn","glmnet","spls","pls","e1071","BGLR","rrBLUP","randomForest","hglm","hglm.data","parallel","pROC","PRROC","STPGA","reshape","reshape2","grid","pbapply","pheatmap"))
+
+require("devtools")
+install_github("G2P-env/G2P") 
+```
+#### 2.  Download [.tar.gz package](https://github.com/G2P-env/G2P/blob/main/G2P_1.0.tar.gz) and install <br/>
+```R
+## install dependencies and GOVS with bult-in vignette
+install.packages(c("ggplot2","brnn","glmnet","spls","pls","e1071","BGLR","rrBLUP","randomForest","hglm","hglm.data","parallel","pROC","PRROC","STPGA","reshape","reshape2","grid","pbapply","pheatmap"))
+
+install.packages("DownloadPath/GOVS_1.0.tar.gz")
+```
+## Links
+* G2P Homepage: https://g2p-env.github.io/
+* QuickStart: https://g2p-env.github.io/QuickStart/
+* Tutorial: https://g2p-env.github.io/Tutorial/
+* Singularity container download: https://cloud.sylabs.io/library/mym89757/repo/g2p
+* R package download: https://github.com/G2P-env/G2P/blob/main/G2P_1.0.tar.gz
