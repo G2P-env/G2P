@@ -14,3 +14,63 @@ __G2P__ (**G**enotype **to** **P**henotype) is an integrative environment in for
 <div align="center">
   Overview of G2P
 </div>
+
+## Installation 
+### Installation of G2P container 
+
+#### 1. Installation of Singularity (Linux, assuming ubuntu)
+#### 1.1 Install system dependencies
+```bash
+$ sudo apt-get update && sudo apt-get install -y \
+    build-essential \
+    libssl-dev \
+    uuid-dev \
+    libgpgme11-dev \
+    squashfs-tools \
+    libseccomp-dev \
+    wget \
+    pkg-config \
+    git \
+    cryptsetup
+```
+#### 1.2 Installing GO
+
+```bash
+$ export VERSION=1.16.4 OS=linux ARCH=amd64 && \  # Replace the values as needed
+  wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz && \ # Downloads the required Go package
+  sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz && \ # Extracts the archive
+  rm go$VERSION.$OS-$ARCH.tar.gz    # Deletes the ``tar`` file
+```
+<span style="color:red">Note: you can vist [Go Downloads page](https://go.dev/dl/) for suitable to the environment you are in </span>
+
+#### 1.3 Installing Singularity
+You can download SingularityCE from one of the releases. To see a full list, visit the [GitHub release page](https://github.com/sylabs/singularity/releases). After deciding on a release to install, you can run the following commands to proceed with the installation (here we use version 3.8.1 as example).
+
+```bash
+$ export VERSION=3.8.1 && # adjust this as necessary \
+    wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-ce-${VERSION}.tar.gz && \
+    tar -xzf singularity-ce-${VERSION}.tar.gz && \
+    cd singularity-ce-${VERSION}
+```
+#### 1.4 Compile singularity
+```bash 
+$ ./mconfig && \
+    make -C builddir && \
+    sudo make -C builddir install
+```
+<span style="color:red">__Note__: If you get an error when compile, please try the following command or refer to [Singularity websit for documents](https://sylabs.io/docs/). </span>
+
+```bash
+## Motify the file mlocal/frags/go_common_opts.mk in singularity path，find the following line and change it
+GOPROXY := https://goproxy.cn,direct
+## At the same time， motify the global proxy
+go env -w GOPROXY=https://goproxy.cn,direct
+```
+
+#### 1.5 Installing Singularity for other operating system
+Singularity can be installed via Vagrant Boxes for Windows and Intel cores MacOS, the details please refer to [Singularity installation guide](https://docs.sylabs.io/guides/3.8/admin-guide/installation.html#installation-on-windows-or-mac).
+
+#### 2. Pulling G2P container
+```bash
+singularity pull G2P.sif library://mym89757/repo/g2p:latest
+```
