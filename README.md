@@ -60,7 +60,7 @@ $ ./mconfig && \
     make -C builddir && \
     sudo make -C builddir install
 ```
-<span style="color:red">__Note__: If you get an error when compile, please try the following command or refer to [Singularity websit for documents](https://sylabs.io/docs/). </span>
+![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) __Note__: If you get an error when compile, please try the following command or refer to [Singularity websit for documents](https://sylabs.io/docs/). 
 
 ```bash
 ## Motify the file mlocal/frags/go_common_opts.mk in singularity path，find the following line and change it
