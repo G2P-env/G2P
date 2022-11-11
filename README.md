@@ -42,7 +42,7 @@ $ export VERSION=1.16.4 OS=linux ARCH=amd64 && \  # Replace the values as needed
   rm go$VERSION.$OS-$ARCH.tar.gz    # Deletes the ``tar`` file
 ```
 <span style="color:red">Note: you can vist [Go Downloads page](https://go.dev/dl/) for suitable to the environment you are in </span>
-- ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`
+! #f03c15 test `#f03c15`
 
 #### 1.3 Installing Singularity
 You can download SingularityCE from one of the releases. To see a full list, visit the [GitHub release page](https://github.com/sylabs/singularity/releases). After deciding on a release to install, you can run the following commands to proceed with the installation (here we use version 3.8.1 as example).
