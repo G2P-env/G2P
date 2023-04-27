@@ -1,6 +1,6 @@
-\name{GSmachine {G2P}}
+\name{GSmachine}
 \alias{GSmachine}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Fit several machine learning models
 }
@@ -12,7 +12,7 @@ GSmachine(markers, pheVal, modelMethods ="SVC", posPercentage = 0.4,
           BestIndividuals = c("top"),ntree = 500,NAImpute = T,
           nodesize = NULL, kernel = c("linear"), gamma = 1, cost = 2^(-9), ...)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{markers}{(numeric, matrix) row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
   \item{pheVal}{(numeric) the phenotypic value of each sample.}
@@ -20,8 +20,8 @@ GSmachine(markers, pheVal, modelMethods ="SVC", posPercentage = 0.4,
   \item{BestIndividuals}{(character) the position of expected phenotype in whole phenotypic data set."top","buttom" or "middle",default "top".}
   \item{NAImpute}{(logical) if true, the missing values in phenotype will be imputed by mean otherwise be removed.}
   \item{modelMethods}{(character) alternative machine learning models. "SVR" and "SVC" from SVM, "RFR" and "RFC" from RF.}
-  \item{ntree}{(integer) ramdomforest parameter. Number of trees to grow. This should not be set to too small a number, to ensure that every input row gets predicted at least a few times,default 500.}
-  \item{nodesize}{(integer) ramdomforest parameter Minimum size of terminal nodes. Setting this number larger causes smaller trees to be grown (and thus take less time). Note that the default values are different for classification (1) and regression (5).}
+  \item{ntree}{(integer) randomforest parameter. Number of trees to grow. This should not be set to too small a number, to ensure that every input row gets predicted at least a few times,default 500.}
+  \item{nodesize}{(integer) randomforest parameter Minimum size of terminal nodes. Setting this number larger causes smaller trees to be grown (and thus take less time). Note that the default values are different for classification (1) and regression (5).}
   \item{kernel}{(numeric) svm parameter the kernel used in training and predicting. You might consider changing some of the following parameters, depending on the kernel type.(linear,polynomial,sigmoid,radial). Default "linear".}
   \item{gamma}{(numeric)svm parameter parameter needed for all kernels except linear, default 1.}
   \item{cost}{(numeric)svm parameter cost of constraints violation, default: 2^(-9), it is the 'C'-constant of the regularization term in the Lagrange formulation.}
@@ -39,22 +39,15 @@ Liaw, A., and Wiener, M. (2002). Classification and regression by randomForest. 
 
 Classification and regression based on a forest of trees using random inputs, based on Breiman (2001) <DOI:10.1023/A:1010933404324>.
 }
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \pkg{e1017}\cr
 \pkg{randomForest}
 }
+
 \examples{
 ## load example data ##
-data(cubic)
+data("cubic")
 
 ## Fit RFR model ##
 RFR_model <- GSmachine(markers = Markers[1:200,], pheVal = pheData$DTT[1:200], modelMethods = "RFR")
@@ -63,12 +56,3 @@ RFR_model <- GSmachine(markers = Markers[1:200,], pheVal = pheData$DTT[1:200], m
 RFC_model <- GSmachine(markers = Markers[1:200,], pheVal = pheData$DTT[1:200], modelMethods = "RFC",
                            posPercentage = 0.4, ntree = 500)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.

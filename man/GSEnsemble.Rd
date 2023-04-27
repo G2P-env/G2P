@@ -1,9 +1,10 @@
-\name{GSEnsemble {G2P}}
+\name{GSEnsemble}
 \alias{GSEnsemble}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Results integration of multiple GS methods
 }
+
 \description{
 The function provides a strategy to integrate the results of multiple GS methods.
 }
@@ -11,7 +12,7 @@ The function provides a strategy to integrate the results of multiple GS methods
 GSEnsemble(predMat, nrandom = 10, evalMethods, by = 0.1, evaluation = T, topAlpha = 15, 
            ...)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{predMat}{(numeric, matrix) the prediction results of algorithms which you want to merge, the first column is the real value of trait.}
   \item{nrandom}{(integer) the repeat number of stacking, default 10.}
@@ -25,23 +26,12 @@ The function generates the integrative GS model by linearly combining multiple G
 }
 \value{
 a list:\cr
-\item{$BestWeight}{the best weight of methods in all repeat}
-\item{$finalMat}{the final matrix cbind predMat with final ensemble score}
-\item{$evalRes}{the evaluation results of finalMat with evalMethods}
-\item{$weightMat}{a weight matrix including all repeats}
-\item{$evalMat}{a evaluation results matrix including all repeats}
+\item{BestWeight}{the best weight of methods in all repeat}
+\item{finalMat}{the final matrix cbind predMat with final ensemble score}
+\item{evalRes}{the evaluation results of finalMat with evalMethods}
+\item{weightMat}{a weight matrix including all repeats}
+\item{evalMat}{a evaluation results matrix including all repeats}
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \link{GSMerge}
@@ -49,7 +39,7 @@ a list:\cr
 }
 \examples{
 ## load example data ##
-data(cubic)
+data("cubic")
 
 ## Genotype-to-phenotype ##
 G2Pres <- G2P(markers = Markers,data = pheData,trait = "EW",
@@ -65,16 +55,6 @@ G2PresNew <- G2P(markers = Markers,data = pheData,trait = "EW",
                                "SPLS", "RFR"),trainIdx = 1:200,predIdx = 401:600)
 
 ## apply GSEnsemble rotio to new prediction ##                       
-GSEnsembleModelRes <- GSMerge(predResMat = G2PresNew,ratio = GSEnsembleRes$BestWeight, autoOptimize = F)
-
-                          
+GSEnsembleModelRes <- GSMerge(predResMat = G2PresNew,ratio = GSEnsembleRes$BestWeight, autoOptimize = F)                      
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.
+

@@ -52,7 +52,7 @@ GSDataQC <- function(markers, phenotype, impute = F, filter = F, NABound = 0.8, 
       }
       
       if(impute){
-        resImpute <- GSImputation(G = markers, imputeMethod = imputeMethod,silent = silent)
+        resImpute <- gsImputation(G = markers, imputeMethod = imputeMethod,silent = silent)
       }else{
         resImpute <- markers
       }
@@ -92,7 +92,7 @@ GSDataQC <- function(markers, phenotype, impute = F, filter = F, NABound = 0.8, 
       }
       
       if(impute){
-        resImpute <- GSImputation(G = markers, imputeMethod = imputeMethod,silent = silent)
+        resImpute <- gsImputation(G = markers, imputeMethod = imputeMethod,silent = silent)
       }else{
         resImpute <- markers
       }
@@ -123,7 +123,7 @@ GSDataQC <- function(markers, phenotype, impute = F, filter = F, NABound = 0.8, 
                 "The format of phenotype is not dataframe."))
   }
 }
-GSImputation <- function(G,imputeMethod = "median",silent = FALSE){
+gsImputation <- function(G,imputeMethod = "median",silent = FALSE){
   if(is.numeric(G)){
     if(imputeMethod == "mean"){
       if(silent){

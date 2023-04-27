@@ -1,9 +1,10 @@
-\name{fit.RKHS}
-\alias{fit.RKHS}
-%- Also NEED an '\alias' for EACH other topic documented here.
+\name{fitRKHS}
+\alias{fitRKHS}
+
 \title{
 Fitting RKHS model and performing prediction.
 }
+
 \description{
 The function fits Reproducing kernel Hilbert space (RKHS) model and export the prediction value of testing sets. 
 }
@@ -14,7 +15,7 @@ fit.RKHS(trainMarkerMat, trainPheVal, predictMarkerMat,
          saveAt = "", S0 = NULL, df0 =5, R2 = 0.5, weights = NULL,
          verbose = FALSE, rmExistingFiles = TRUE, groups=NULL)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{trainMarkerMat}{(numeric, matrix) genotypic data of training set, row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
   \item{trainPheVal}{(numeric) the phenotypic value of each sample.}
@@ -32,36 +33,27 @@ fit.RKHS(trainMarkerMat, trainPheVal, predictMarkerMat,
   \item{rmExistingFiles}{(logical) if TRUE, removes existing output files from previous runs, default TRUE.}
   \item{groups}{(factor) a vector of the same length of y that associates observations with groups, each group will have an associated variance component for the error term.}
 }
-\details{
 
-}
 \value{
 a list including fitted model and prediction results (outputModel = TRUE).\cr
-\item{$model }{details of fitted model}
-\item{$predictRes }{prediction results of testing set}
+\item{model }{details of fitted model}
+\item{predictRes }{prediction results of testing set}
 
 a array of prediction results (outputModel = FALSE).
 }
 \references{
 Pérez, P., & de los Campos, G. (2014). BGLR: a statistical package for whole genome regression and prediction. Genetics, 198(2), 483-495.
 }
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \pkg{BGLR}
 }
+
 \examples{
 ## Load example data ##
-data(GYSS)
+data("cubic")
 
 ## use RKHS model to modeling and predict ##
-RKHS_Res <- fit.RKHS(trainMarkerMat = Markers, trainPheVal = phenotype, 
-                     predictMarkerMat = Markers[1:10,],nIter = 1500, burnIn = 500)
+RKHS_Res <- fit.RKHS(trainMarkerMat = Markers[1:200,], trainPheVal = pheData$DTT[1:200], 
+                     predictMarkerMat = Markers[201:400,],nIter = 1500, burnIn = 500)
 }

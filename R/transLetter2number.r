@@ -213,7 +213,7 @@ transLetter2number <- function(G,maf=0,mr=0,silent = FALSE,ref.alt = NULL,impute
     missing <- which(is.na(G.number))
     if (length(missing) > 0) {
       message(paste0("Imputing missing data with mode ",imputeMethod,"."))
-      G.number <- GSImputation(G.number,imputeMethod = imputeMethod,silent = silent)
+      G.number <- gsImputation(G.number,imputeMethod = imputeMethod,silent = silent)
     }
   }else {
     message("Imputation not required. Be careful using non-imputed matrices in mixed model solvers.")

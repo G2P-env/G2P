@@ -2,7 +2,10 @@
 % Please edit documentation in R/fitModels.r
 \name{fit.BRNN}
 \alias{fit.BRNN}
-\title{Modeling and predicting using Bayesian Regularization Neural Networks(BRNN)}
+\title{
+  Modeling and predicting using Bayesian Regularization Neural Networks(BRNN)
+}
+
 \usage{
 fit.BRNN(
   trainMarkerMat,
@@ -14,9 +17,9 @@ fit.BRNN(
   neurons = 4,
   epochs = 30,
   cpus = 1,
-  ...
-)
+  ...)
 }
+
 \description{
 Modeling and predicting using Bayesian Regularization Neural Networks(BRNN)
 }

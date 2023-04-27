@@ -1,6 +1,6 @@
-\name{resultsMerge {G2P}}
+\name{resultsMerge}
 \alias{resultsMerge}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Transform prediction results list to matrix
 }
@@ -10,47 +10,22 @@ The function provides a quick way to get prediction matix from prediction list.
 \usage{
 resultsMerge(predList)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{predList}{(list)  prediction results list of cross-validation.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 a big matrix of prediction results.
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ## Load example data ##
-data(GYSS)
+data("cubic")
 
 ## cross validation ##
-predlist <- G2PCrossvalidation(cross = 10,seed = 1 , cpus = 3, markers = Markers,
-               pheVal = phenotype, modelMethods = c("BayesA","BayesB","BayesC","rrBLUP", "RFC"),
-               outputModel = FALSE)
+predlist <- G2PCrossValidation(cross = 5,seed = 1, cpus = 1, times = 2, markers = Markers[1:200,],
+                data = pheData[1:200,], trait = "DTT" modelMethods = c("rrBLUP", "spls"),
+                outputModel = FALSE)
 resultMat <- resultsMerge(predlist)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.

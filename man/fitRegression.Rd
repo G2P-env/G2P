@@ -1,9 +1,10 @@
-\name{GSReModel {G2P}}
+\name{GSReModel}
 \alias{GSReModel}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Fit several common regression models
 }
+
 \description{
 The function can fit several regression models of genomic selection including LASSO, RRBLUP, SPLS and bigRR.
 }
@@ -34,8 +35,6 @@ GSReModel(markers, pheVal, modelMethods,NAImpute = F,
   \item{lambda}{the shrinkage parameter determines the amount of shrinkage. Default is NULL meaning that it is to be estimated along with other model parameters.}
   \item{tol.err}{internal tolerance level for extremely small values; default value is 1e-6.}
   \item{tol.conv}{tolerance level in convergence; default value is 1e-8.}
-  
-  
 }
 \details{
 SPLS (Sparse partial least squares)\cr
@@ -58,21 +57,13 @@ hglm: A package for fitting hierarchical generalized linear models. The R Journa
 Shen, X., Alam, M., Fikse, F., and Rönnegård, L. (2013). A novel generalized ridge regression method for quantitative genetics. Genetics 193(4), 1255-1268.
 }
 
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \pkg{rrBLUP}\cr
 \pkg{hglm}\cr
 \pkg{glmnet}\cr
 \pkg{spls}
 }
+
 \examples{
 ## Load example data ##
 data("cubic")
@@ -89,12 +80,3 @@ LASSO_model <- GSReModel(markers = Markers[1:200,],pheVal = pheData$DTT[1:200],m
 ## fit bigRR model ##
 bigRR_model <- GSReModel(markers = Markers[1:200,],pheVal = pheData$DTT[1:200],modelMethods = "bigRR")
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.

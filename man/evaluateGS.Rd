@@ -1,17 +1,19 @@
-\name{G2PEvaluation {G2P}}
+\name{G2PEvaluation}
 \alias{G2PEvaluation}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Models evaluation
 }
+
 \description{
 The function consolidates 13 evaluation metrics to evaluete the performance of genomic selection models.
 }
+
 \usage{
 G2PEvaluation(realScores, predScores, Probability = FALSE, evalMethod = "RE",
            Beta = 1, BestIndividuals = "top", topAlpha = 1:90,probIndex = NULL)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{realScores}{(numeric,vector) observation values of validation data.}
   \item{predScores}{(numeric,vector or matrix) prediction values from genomic selection models.}
@@ -22,11 +24,12 @@ G2PEvaluation(realScores, predScores, Probability = FALSE, evalMethod = "RE",
   \item{globalAlpha}{(logical) if global metrics (pearson, kendall, spearman, MSE and R2) evaluate by threshold (topAlpha),default FALSE.}
   \item{probIndex}{(integer) indicate the column index which prediction result is probability. For example, classification model "RFC" locates the fifth column in prediction matrix and then probIndex = 5.}
 }
+
 \details{
  \tabular{rlll}{
    \strong{Abbreviation}   \tab\tab  \strong{Full name} \cr
-   pearson   \tab\tab   Pearson’s correlation coefficient \cr
-   kendall   \tab\tab   Kendall’s rank correlation coefficient \cr
+   pearson   \tab\tab   Pearson's correlation coefficient \cr
+   kendall   \tab\tab   Kendall's rank correlation coefficient \cr
    spearman   \tab\tab   Spearman's rank correlation \cr
    MSE   \tab\tab   Mean squared error \cr
    R2   \tab\tab   Coefficient of determination \cr
@@ -46,25 +49,14 @@ a list inculding evaluation results with methods which user selected.
 
     \item{RE }{a matrix for threshold metric RE.}
     \item{Kappa }{a matrix for threshold metric Kappa.}
-    \item{... }{a matrix for other threshold metrics user selected.}
+    \item{...}{a matrix for other threshold metrics user selected.}
 }
 \references{
 Blondel M, Onogi A, Iwata H, Ueda N. 2015. A ranking approach to genomic selection. PloS One, 10(6): e0128570
 }
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
-data(cubic)
+data("cubic")
 ########## prediction ############
 C2Pres <- G2P(markers = Markers,data = pheData,trait = "EW",
               modelMethods = c("BayesA", "BRR", "RRBLUP",
@@ -75,12 +67,3 @@ evalres <- G2PEvaluation(realScores = C2Pres[,1], predScores = C2Pres[,2:7],
                                           "AUC","AUCpr","NDCG","meanNDCG",
                                           "MSE","R2","F1","accuracy"),topAlpha = 1:90, probIndex = 5)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.

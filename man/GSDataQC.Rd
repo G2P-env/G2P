@@ -25,27 +25,21 @@ GSDataQC(markers, phenotype, impute = F, filter = F, NABound = 0.8,
   \item{silent}{(logical) TRUE for hiding progress bar and FALSE for showing progress bar.}
 }
 
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 a list of the data quality information.\cr
-\item{$Global}{overview of missing value in genotypic data.}
-\item{$resMarker}{genotypic data after processing.}
-\item{$MAF}{minor allele frequency (MAF) of each SNP.}
-\item{$NACountRow}{the number of missing alleles from row perspective (sample).}
-\item{$NACountRowPercent}{the missing rate from row perspective (sample).}
-\item{$NACountCol}{the number of missing alleles from column perspective (feature SNP).}
-\item{$NACountColPercent}{the missing rate from column perspective (feature SNP).}
-\item{$NAIndex}{index of all missing alleles.}
-\item{$phenotypeNAIdx}{index of missing phenotypes.}
+\item{Global}{overview of missing value in genotypic data.}
+\item{resMarker}{genotypic data after processing.}
+\item{MAF}{minor allele frequency (MAF) of each SNP.}
+\item{NACountRow}{the number of missing alleles from row perspective (sample).}
+\item{NACountRowPercent}{the missing rate from row perspective (sample).}
+\item{NACountCol}{the number of missing alleles from column perspective (feature SNP).}
+\item{NACountColPercent}{the missing rate from column perspective (feature SNP).}
+\item{NAIndex}{index of all missing alleles.}
+\item{phenotypeNAIdx}{index of missing phenotypes.}
 }
 
-\seealso{
-
-}
 \examples{
-data(MZ)
+data("cubic")
 ## generate missing value
 misIndex <- sample(1:length(Markers),1000000)
 Markers[misIndex] <- NA

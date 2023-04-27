@@ -1,6 +1,6 @@
-\name{G2PCrossValidation {G2P}}
+\name{G2PCrossValidation}
 \alias{G2PCrossValidation}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Cross-validation for genomic selection
 }
@@ -19,7 +19,7 @@ G2PCrossValidation(cvSampleList = NULL,cross = 10,times = 1,seed = 1,cpus = 1,ma
                    epochs = 30, neurons = 4,
                    ...)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{cvSampleList}{(list) the specified cross-validation combination, or a list from function \code{\link{cvSampleIndex}}.Default NULL and execute a random grouping.}
   \item{cross}{(integer) the fold of N-fold cross-validation. For example cross = 10 for 10-fold cross-validation.}
@@ -40,8 +40,8 @@ G2PCrossValidation(cvSampleList = NULL,cross = 10,times = 1,seed = 1,cpus = 1,ma
   \item{verbose}{(logical) if TRUE the iteration history is printed, default FALSE.}
   \item{rmExistingFiles}{(logical) if TRUE, removes existing output files from previous runs, default TRUE.}
   \item{groups}{(factor) a vector of the same length of y that associates observations with groups, each group will have an associated variance component for the error term.}
-  \item{ntree}{(integer) ramdomforest parameter. Number of trees to grow. This should not be set to too small a number, to ensure that every input row gets predicted at least a few times,default 500.}
-  \item{nodesize}{(integer) ramdomforest parameter Minimum size of terminal nodes. Setting this number larger causes smaller trees to be grown (and thus take less time). Note that the default values are different for classification (1) and regression (5).}
+  \item{ntree}{(integer) randomforest parameter. Number of trees to grow. This should not be set to too small a number, to ensure that every input row gets predicted at least a few times,default 500.}
+  \item{nodesize}{(integer) randomforest parameter Minimum size of terminal nodes. Setting this number larger causes smaller trees to be grown (and thus take less time). Note that the default values are different for classification (1) and regression (5).}
   \item{posPercentage}{(numeric,[0,1]) phenotype of extreme individuals which expected, default 0.4.}
   \item{BestIndividuals}{(character) the position of expected phenotype in whole phenotypic data set."top","buttom" or "middle",default "top".}
   \item{kernel}{(numeric) svm parameter the kernel used in training and predicting. You might consider changing some of the following parameters, depending on the kernel type.(linear,polynomial,sigmoid,radial). Default "linear".}
@@ -63,27 +63,14 @@ G2PCrossValidation(cvSampleList = NULL,cross = 10,times = 1,seed = 1,cpus = 1,ma
   \item{neurons}{(integer) indicates the number of neurons,defult 4.}
   \item{epochs}{(integer) maximum number of epochs(iterations) to train, default 30.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 a list:
 The prediction results of input GS methods with cross validation.
-\item{$CV1 }{prediction matrix of first time CV}
-\item{$CV2 }{prediction matrix of second time CV}
-\item{$CV\emph{n}... }{prediction matrix of \emph{n}th time CV}
+\item{CV1 }{prediction matrix of first time CV}
+\item{CV2 }{prediction matrix of second time CV}
+\item{CV\emph{n}... }{prediction matrix of \emph{n}th time CV}
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{cvSampleIndex}}\cr
@@ -91,19 +78,10 @@ The prediction results of input GS methods with cross validation.
 }
 \examples{
 ## load example data ##
-data(cubic)
+data("cubic")
 
 ## perform a 2 times 5-fold cross-validation  ##
 predlist <- G2PCrossValidation(cross = 5,seed = 1, cpus = 1, times = 2, markers = Markers[1:200,],
-                data = pheData[1:200,], trait = "DTT",modelMethods = c("rrBLUP", "spls"),
+                data = pheData[1:200,], trait = "DTT" modelMethods = c("rrBLUP", "spls"),
                 outputModel = FALSE)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.

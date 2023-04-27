@@ -1,9 +1,10 @@
-\name{G2P {G2P}}
+\name{G2P}
 \alias{G2P}
 
 \title{
 Genotype to phenotype
 }
+
 \description{
 The function fits genomic selection models, performs prediction and exports the prediction value of testing sets. 
 }
@@ -17,7 +18,7 @@ G2P(markers,data,fix = NULL,trait,trainIdx,predIdx,modelMethods ="BayesA",output
     tol.err = 1e-6, tol.conv = 1e-8,epochs = 30, neurons = 4,
     ...)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{markers}{(numeric, matrix) genootypic data, row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
   \item{data}{(data.frame) phenotypic data and other information for data set.}
@@ -37,8 +38,8 @@ G2P(markers,data,fix = NULL,trait,trainIdx,predIdx,modelMethods ="BayesA",output
   \item{verbose}{(logical) if TRUE the iteration history is printed, default FALSE.}
   \item{rmExistingFiles}{(logical) if TRUE, removes existing output files from previous runs, default TRUE.}
   \item{groups}{(factor) a vector of the same length of y that associates observations with groups, each group will have an associated variance component for the error term.}
-  \item{ntree}{(integer) ramdomforest parameter. Number of trees to grow. This should not be set to too small a number, to ensure that every input row gets predicted at least a few times,default 500.}
-  \item{nodesize}{(integer) ramdomforest parameter Minimum size of terminal nodes. Setting this number larger causes smaller trees to be grown (and thus take less time). Note that the default values are different for classification (1) and regression (5).}
+  \item{ntree}{(integer) randomforest parameter. Number of trees to grow. This should not be set to too small a number, to ensure that every input row gets predicted at least a few times,default 500.}
+  \item{nodesize}{(integer) ramdonforest parameter Minimum size of terminal nodes. Setting this number larger causes smaller trees to be grown (and thus take less time). Note that the default values are different for classification (1) and regression (5).}
   \item{posPercentage}{(numeric,[0,1]) phenotype of extreme individuals which expected, default 0.4.}
   \item{BestIndividuals}{(character) the position of expected phenotype in whole phenotypic data set."top","buttom" or "middle",default "top".}
   \item{kernel}{(numeric) svm parameter the kernel used in training and predicting. You might consider changing some of the following parameters, depending on the kernel type.(linear,polynomial,sigmoid,radial). Default "linear".}
@@ -85,22 +86,11 @@ G2P(markers,data,fix = NULL,trait,trainIdx,predIdx,modelMethods ="BayesA",output
 }
 \value{
 a list including fitted model and prediction results (outputModel = TRUE).\cr
-\item{$model }{details of fitted model}
-\item{$predictRes }{a matrix of prediction results}
+\item{model }{details of fitted model}
+\item{predictRes }{a matrix of prediction results}
 
 a matrix of prediction results (outputModel = FALSE).
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \link[G2P]{GSmachine}\cr
@@ -110,9 +100,10 @@ a matrix of prediction results (outputModel = FALSE).
 \link[G2P]{fit.RKHS}\cr
 \link[G2P]{predictGS}
 }
+
 \examples{
 ## load example data ##
-data(cubic)
+data("cubic")
 
 ## perform genotype to phenotype prediction with all integrated methods ## 
 C2Pres <- G2P(markers = Markers,data = pheData,trait = "DTT",

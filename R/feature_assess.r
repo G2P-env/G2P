@@ -1,7 +1,6 @@
 ############################## Feature Selection ############################
 #'@import rrBLUP randomForest
-#'@export feature_assess
-#'@importFrom randomForest margin
+#'@export feature_assess 
 feature_assess <- function(markers, phenotype, method = c("RRBLUP", "Gini", "Accuracy"), ntree = 500, importance = TRUE, posPercentage = 0.40, BestIndividuals = c("top", "middle", "buttom")){
   require("rrBLUP")
   require("randomForest")

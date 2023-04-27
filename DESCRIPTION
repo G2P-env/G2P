@@ -1,7 +1,7 @@
 Package: G2P
 Title: Genotype to phenotype
 Version: 1.0
-Author: Qian Cheng, Chuang Ma and Xiangfeng Wang
+Author: Qian Wang, Shan Jiang, Tong Li, Zhixu Qiu, Jun Yan, Ran Fu, Chuang Ma, Xiangfeng Wang, Shuqin Jiang, Qian Cheng.
 Maintainer: Qian Cheng <qchengray@gmail.com>
 Depends: R (>= 3.6.0),ggplot2, brnn, glmnet, spls, pls, e1071, BGLR, rrBLUP, randomForest, hglm, parallel, hglm.data, pROC, PRROC, STPGA, reshape, reshape2, pbapply, qtlDesign 
 Imports: grid, stats, scales
@@ -14,5 +14,6 @@ License: GPL-3
 Suggests: 
     knitr,
     rmarkdown,
-    qtlDesign
+    qtlDesign,
+    data.table
 VignetteBuilder: knitr

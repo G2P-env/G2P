@@ -1,9 +1,10 @@
-\name{fit.BGLR {G2P}}
+\name{fit.BGLR}
 \alias{fit.BGLR}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Fit Bayesian generalized linear regression
 }
+
 \description{
 The function fits various types of parametric and semi-parametric Bayesian regressions.
 }
@@ -14,7 +15,7 @@ fit.BGLR(trainMarkerMat, trainPheVal, predictMarkerMat, modelMethods,
          saveAt = "", S0 = NULL, df0 =5, R2 = 0.5, weights = NULL,
          rmExistingFiles = TRUE, groups=NULL)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{trainMarkerMat}{(numeric, matrix) genotypic data of training set. row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
   \item{trainPheVal}{(numeric, array) the phenotypic value of each sample.}
@@ -32,47 +33,32 @@ fit.BGLR(trainMarkerMat, trainPheVal, predictMarkerMat, modelMethods,
   \item{groups}{(factor) a vector of the same length of y that associates observations with groups, each group will have an associated variance component for the error term.}
   \item{outputModel}{(logical) if TRUE, return the list of trained model and prediction results, default FALSE.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 a list including fitted model and prediction results (outputModel = TRUE).\cr
-\item{$model }{details of fitted model}
-\item{$predictRes }{prediction results of testing set}
+\item{model }{details of fitted model}
+\item{predictRes }{prediction results of testing set}
 
 a array of prediction results (outputModel = FALSE).
-%% ...
+
 }
 \references{
 Pérez, P., & de los Campos, G. (2014). BGLR: a statistical package for whole genome regression and prediction. Genetics, 198(2), 483-495.
 }
-\author{
-%%  ~~who you are~~
-}
+
 \note{
 For more details, see http://genomics.cimmyt.org/BGLR-extdoc.pdf
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \pkg{BGLR}
 }
 \examples{
 ## Load example data ##
-data(cubic)
+data("cubic")
 
 ## Fit Bayes A model and output model details ##
 BayesA_model <- fit.BGLR(trainMarkerMat = Markers[1:200,], predictMarkerMat = Markers[201:400,],
                          trainPheVal = pheData$DTT[1:200], modelMethods = "BayesA", outputModel = TRUE)
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.

@@ -181,8 +181,7 @@ trainModel_bigRR <- function (markers, X = NULL, pheVal, weight = NULL,
 
 ############################### Fit a machine learning  model ############################
 #' @export GSmachine
-#' @import e1071  
-#' @importFrom randomForest margin
+#' @import e1071 randomForest  
 GSmachine <- function(markers, pheVal, modelMethods ="SVC", posPercentage = 0.4, BestIndividuals = c("top"),
                       ntree = 500,NAImpute = T,
                       nodesize = NULL, kernel = c("linear"), gamma = 1, cost = 2^(-9), ...){
@@ -223,11 +222,11 @@ GSmachine <- function(markers, pheVal, modelMethods ="SVC", posPercentage = 0.4,
   }
   
   if(modelMethods %in% c("RFR","RFC")){
-    modelMethods <- "randomforest"
+    modelMethods <- "RF"
   }
   switch(modelMethods,
          svm = svm(x= markers, y = pheVal,kernel = kernel,cost=cost,gamma = gamma,probability = TRUE, ...),
-         randomforest = randomForest( x = markers, y = pheVal, ntree = ntree, importance = F,nodesize = nodesize), ...)
+         RF = randomForest( x = markers, y = pheVal, ntree = ntree, importance = F,nodesize = nodesize), ...)
 }
 
 ##############################################################################################################################3
