@@ -81,7 +81,7 @@ singularity pull G2P.sif library://mym89757/repo/g2p:latest
 #### 1.  Github install
 ```R
 ## install dependencies and GOVS
-install.packages(c("ggplot2","brnn","glmnet","spls","pls","e1071","BGLR","rrBLUP","randomForest","hglm","hglm.data","parallel","pROC","PRROC","STPGA","reshape","reshape2","grid","pbapply","pheatmap"))
+install.packages(c("ggplot2","brnn","glmnet","spls","pls","e1071","BGLR","rrBLUP","randomForest","hglm","hglm.data","parallel","pROC","PRROC","STPGA","reshape","reshape2","grid","pbapply","pheatmap","data.table"))
 
 require("devtools")
 install_github("G2P-env/G2P") 
@@ -89,7 +89,7 @@ install_github("G2P-env/G2P")
 #### 2.  Download [.tar.gz package](https://github.com/G2P-env/G2P/raw/main/G2P_1.0.tar.gz) and install <br/>
 ```R
 ## install dependencies and GOVS with bult-in vignette
-install.packages(c("ggplot2","brnn","glmnet","spls","pls","e1071","BGLR","rrBLUP","randomForest","hglm","hglm.data","parallel","pROC","PRROC","STPGA","reshape","reshape2","grid","pbapply","pheatmap"))
+install.packages(c("ggplot2","brnn","glmnet","spls","pls","e1071","BGLR","rrBLUP","randomForest","hglm","hglm.data","parallel","pROC","PRROC","STPGA","reshape","reshape2","grid","pbapply","pheatmap","data.table"))
 
 install.packages("DownloadPath/GOVS_1.0.tar.gz")
 ```
