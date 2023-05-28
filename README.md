@@ -82,20 +82,30 @@ singularity pull G2P.sif library://mym89757/repo/g2p:latest
 ```R
 ## install dependencies and GOVS
 install.packages(c("ggplot2","brnn","glmnet","spls","pls","e1071","BGLR","rrBLUP","randomForest","hglm","hglm.data","parallel","pROC","PRROC","STPGA","reshape","reshape2","grid","pbapply","pheatmap","data.table"))
-
+## install package qtlDesign
+install.packages(path_of_qtlDesign, repos = NULL, type="source")
+## e.g. "/home/Download/qtlDesign_0.941.tar.gz"
 require("devtools")
+
 install_github("G2P-env/G2P") 
 ```
+qtlDeisgn [download link](https://github.com/G2P-env/G2P/raw/main/qtlDesign_0.941.tar.gz)
+
 #### 2.  Download [.tar.gz package](https://github.com/G2P-env/G2P/raw/main/G2P_1.0.tar.gz) and install <br/>
 ```R
 ## install dependencies and GOVS with bult-in vignette
 install.packages(c("ggplot2","brnn","glmnet","spls","pls","e1071","BGLR","rrBLUP","randomForest","hglm","hglm.data","parallel","pROC","PRROC","STPGA","reshape","reshape2","grid","pbapply","pheatmap","data.table"))
+## install package qtlDesign
+install.packages(path_of_qtlDesign, repos = NULL, type="source")
+## e.g. "/home/Download/qtlDesign_0.941.tar.gz"
 
 install.packages("DownloadPath/GOVS_1.0.tar.gz")
 ```
+qtlDeisgn [download link](https://github.com/G2P-env/G2P/raw/main/qtlDesign_0.941.tar.gz)
 ## Links
 * G2P Homepage: https://g2p-env.github.io/
 * QuickStart: https://g2p-env.github.io/QuickStart/
 * Tutorial: https://g2p-env.github.io/Tutorial/
 * Singularity container download: https://cloud.sylabs.io/library/mym89757/repo/g2p
 * R package download: https://github.com/G2P-env/G2P/raw/main/G2P_1.0.tar.gz
+* qtlDesign: https://github.com/G2P-env/G2P/raw/main/qtlDesign_0.941.tar.gz
