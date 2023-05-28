@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/platform-Win%20%7C%20Linux%20%7C%20MacOS-lightgrey?style=plastic)<br/>
 
 ## Overview
-__G2P__ (**G**enotype **to** **P**henotype) is an integrative environment in form of Singularity container, which not only contains a library of 16 state-of-the-art GS models and 13 evaluation metrics for models evaluation and selection but also provides several stand-alone software and easy-to-use functions for data preprocessing, population analysis, integration of prediction results from multiple models, and refinement of training datasets. G2P provides a comprehensive environment for genomic selection to facilitate the comparison and selection of appropriate model. G2P package and related dependencies has been already integrated into the G2P continer, allowing easy installation and upgrade, and the G2P package is accessible as an stand-alone R package.
+__G2P__ (**G**enotype **to** **P**henotype) is an integrative environment in form of Singularity container, which not only contains a library of 16 state-of-the-art GS models and 13 evaluation metrics for models evaluation and selection but also provides several stand-alone software and easy-to-use functions for data preprocessing, population analysis, integration of prediction results from multiple models, and refinement of training datasets. G2P provides a comprehensive environment for genomic selection to facilitate the comparison and selection of appropriate model. G2P package and related dependencies has been already integrated into the G2P container, allowing easy installation and upgrade, and the G2P package is accessible as an stand-alone R package.
 
 <div align="center">
 <img src="https://g2p-env.github.io/img/overall.png" width="900"/>
@@ -77,7 +77,7 @@ Singularity can be installed via Vagrant Boxes for Windows and Intel cores MacOS
 singularity pull G2P.sif library://mym89757/repo/g2p:latest
 ```
 ## Installation of G2P R package 
-![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) __Note__: the functions, like _GSFiltering_, _GSImputation_, _GSTransForm_, _GSRead_ shown in figure ["Overview of G2P" a](https://github.com/G2P-env/G2P/blob/main/figures/Fig%201.png) needs the opearation evironment and stand-alone software on the circle, namely, these function in G2P pcakage can't be performed normally unless the dependencis shown in figure ["Overview of G2P" a](https://github.com/G2P-env/G2P/blob/main/figures/Fig%201.png)(upper semicircle) have been correctly installed and configuration. G2P package can be installed for MacOS, Linux and Windows and the functions shown in figure ["Overview of G2P" b](https://github.com/G2P-env/G2P/blob/main/figures/Fig%201.png) can run normally.
+![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) __Note__: the functions, like _GSFiltering_, _GSImputation_, _GSTransForm_, _GSRead_ shown in figure ["Overview of G2P" a](https://github.com/G2P-env/G2P/blob/main/figures/Fig%201.png) needs the opearation evironment and stand-alone software on the circle, namely, these function in G2P pcakage can't be performed normally unless the dependencis shown in figure ["Overview of G2P" a ](https://github.com/G2P-env/G2P/blob/main/figures/Fig%201.png)(upper semicircle) have been correctly installed and configuration. G2P package can be installed for MacOS, Linux and Windows and the functions shown in figure ["Overview of G2P" b] (https://github.com/G2P-env/G2P/blob/main/figures/Fig%201.png) can run normally.
 #### 1. Install through Github
 ```R
 ## install dependencies and GOVS
