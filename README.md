@@ -90,7 +90,7 @@ qtlDesign [download link](https://github.com/G2P-env/G2P/raw/main/qtlDesign_0.94
 
 #### 2. Download [.tar.gz package](https://github.com/G2P-env/G2P/raw/main/G2P_1.0.tar.gz) and install <br/>
 ```R
-## install dependencies and G2P with bult-in vignette
+## install dependencies and G2P
 install.packages(c("ggplot2","brnn","glmnet","spls","pls","e1071","BGLR","rrBLUP","randomForest","hglm","hglm.data","parallel","pROC","PRROC","STPGA","reshape","reshape2","grid","pbapply","pheatmap","data.table"))
 ## install package qtlDesign
 install.packages(path_of_qtlDesign, repos = NULL, type="source")
