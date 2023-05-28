@@ -81,7 +81,6 @@ multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
 ########################################### SPTPSel function ##################################################
 #' @export TSRefine
 #' @import STPGA qtlDesign reshape pbapply
-#' @importFrom ggplot2 margin
 
 TSRefine <- function(markers,candidates,test = NULL,ntosel,method = "PEVmean",npop = 100, nelite =5 ,mutprob = .8,niterations = 500,
                     cores = 1,lambda = NULL,sequent = FALSE,visulization = F){
@@ -194,7 +193,7 @@ TSRefine <- function(markers,candidates,test = NULL,ntosel,method = "PEVmean",np
         g00 <- ggplot() + 
           geom_point(data = PCA_plot_backGround,aes(x = V1,y = V2,colour = "Background"),size =1,alpha = 1) + 
           labs(x = "PC1",y = "PC2",title= paste0("TP size = ",ntosel[i])) +
-          geom_point(data = as.data.frame(PCbasis[test,1:2]),aes(x = V1,y = V2,colour = "Testing pop"),size =1,alpha = 1)
+          geom_point(data = as.data.frame(PCbasis[test,1:2]),aes(x = V1,y = V2,colour = "Test pop"),size =1,alpha = 1)
         
         g01 <- g00 + p + scale_colour_manual(values = c("cadetblue","blue","red"))+
           theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank(),

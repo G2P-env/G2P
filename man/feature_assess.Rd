@@ -1,11 +1,11 @@
-\name{feature_assess {G2P}}
+\name{feature_assess}
 \alias{feature_assess}
 \title{
 Feature assessment and selection
 }
 
 \description{
-This function scores each marker,so that reduce the data dimension and perform feature selection.(Methods including Gini,Accuracy and rrBLUP).
+This function scores each marker, so that reduce the data dimension and perform feature selection.
 }
 \usage{
 feature_assess(markers, phenotype, method = c("RRBLUP", "Gini", "Accuracy"), 
@@ -14,10 +14,10 @@ feature_assess(markers, phenotype, method = c("RRBLUP", "Gini", "Accuracy"),
 }
 
 \arguments{
-  \item{markers}{(numeric, matrix) row represents sample and column represent SNP information (feature).Genotypes should be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote);missing alleles (NAs) are not allowed.}
+  \item{markers}{(numeric, matrix) row represents sample and column represents SNP (feature). Genotypes should be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote);missing alleles (NAs) are not allowed.}
   \item{phenotype}{(numeric) a numeric arrary, phenotype value of each individual.}
-  \item{method}{(character) the method of feature selction, including "Gini" "Accuracy" "rrBLUP", default "rrBLUP".}
-  \item{ntree}{(numeric) the number of random forest decision tree, default 500.}  
+  \item{method}{(character) method of feature selction, including "Gini" "Accuracy" "RRBLUP", default "RRBLUP".}
+  \item{ntree}{(numeric) number of random forest decision tree, default 500.}  
   \item{importance}{(logical) whether the results of variable importance,default TRUE.}
   \item{posPercentage}{(numeric,[0,1]) phenotype of extreme individuals which expected, default 0.4.}
   \item{BestIndividuals}{(character) the position of expected phenotypes in whole phenotypic dataset."top","buttom" or "middle",defult "top".}

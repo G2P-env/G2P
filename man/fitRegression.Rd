@@ -17,7 +17,7 @@ GSReModel(markers, pheVal, modelMethods,NAImpute = F,
 }
 
 \arguments{
-  \item{markers}{(numeric, matrix) row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
+  \item{markers}{(numeric, matrix) row represents sample and column represents SNP (feature). Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
   \item{pheVal}{(numeric) the phenotypic value of each sample.}
   \item{modelMethods}{(character) alternative regression models. "RRBLUP", "LASSO", "SPLS" and "bigRR".}
   \item{NAImpute}{(logical) if true, the missing values in phenotype will be imputed by mean otherwise be removed.}
@@ -43,7 +43,7 @@ LASSO (Least absolute shrinkage and selection operator)\cr
 bigRR (big ridge regression)
 }
 \value{
-A list model which is enable to predict.
+A list of fitted models.
 }
 \references{
 Endelman, J.B. 2011. Ridge regression and other kernels for genomic selection with R package rrBLUP. Plant Genome 4:250-255. doi: 10.3835/plantgenome2011.08.0024

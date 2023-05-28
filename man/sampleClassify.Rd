@@ -2,7 +2,7 @@
 \alias{sampleClassify}
 
 \title{
-Generate positive and negative samples for training
+Generate positive and negative samples for classification methods.
 }
 
 \description{
@@ -21,8 +21,8 @@ sampleClassify(phenotype, posPercentage = 0.4,
 
 \value{
 A list of row number regarding to positive and negative samples.
-\item{posSampleIndex }{Index of positive samples.}
-\item{negSampleIndex }{Index of negative samples.}
+\item{posSampleIndex }{index of positive samples.}
+\item{negSampleIndex }{index of negative samples.}
 
 }
 

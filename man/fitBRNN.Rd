@@ -6,7 +6,7 @@ Fitting BRNN model and performing prediction.
 }
 
 \description{
-The function fits Bayesian regularization neural networks (BRNN) model and export the prediction value of testing sets. 
+The function fits Bayesian regularization neural networks (BRNN) model and export the prediction value of test set. 
 }
 \usage{
 fit.BRNN(trainMarkerMat, trainPheVal, predictMarkerMat, 
@@ -15,7 +15,7 @@ fit.BRNN(trainMarkerMat, trainPheVal, predictMarkerMat,
 }
 
 \arguments{
-  \item{trainMarkerMat}{(numeric, matrix) row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
+  \item{trainMarkerMat}{(numeric, matrix) row represents sample and column represents SNP (feature). Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
   \item{trainPheVal}{(numeric) the phenotypic value of each sample.}
   \item{predictMarkerMat}{(numeric, matrix) a new set of genotypic data that need to predict. row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote), the coding pattern must be consistent with training data. missing (NA) alleles are not allowed.}
   \item{NAImpute}{(logical) if true, the missing values in phenotype will be imputed by mean otherwise be removed.}
@@ -29,9 +29,9 @@ fit.BRNN(trainMarkerMat, trainPheVal, predictMarkerMat,
 \value{
 a list including fitted model and prediction results (outputModel = TRUE).\cr
 \item{model }{details of fitted model}
-\item{predictRes }{prediction results of testing set}
+\item{predictRes }{prediction results of test set}
 
-a array of prediction results (outputModel = FALSE).
+an array of prediction results (outputModel = FALSE).
 }
 \references{
 Pérez-Rodríguez, P., Gianola, D., Weigel, K., Rosa, G., and Crossa, J. (2013). Technical Note: An R package for fitting Bayesian regularized neural networks with applications in animal breeding. Journal of animal science 91(8), 3522-3531.
@@ -45,7 +45,6 @@ Pérez-Rodríguez, P., Gianola, D., Weigel, K., Rosa, G., and Crossa, J. (2013).
 data("cubic")
 
 ## use BRNN model to modeling and predict ##
-RKHS_Res <- fit.RKHS(trainMarkerMat = Markers[1:200,], trainPheVal = pheData$DTT[1:200], 
-                     predictMarkerMat = Markers[201:400,],outputModel = T,
-                     nIter = 1500, burnIn = 500)
+brnn_Res <- fit.BRNN(trainMarkerMat = Markers[1:200,], trainPheVal = pheData$DTT[1:200], 
+                     predictMarkerMat = Markers[201:400,],outputModel = T)
 }

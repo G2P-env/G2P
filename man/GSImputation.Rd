@@ -17,9 +17,9 @@ GSImputation(input, output, inputformat, workdir = "./",
   \item{output}{(character) name of original file, prefix for all.}
   \item{inputformat}{(character) file format of input file, "hmp" for hapmap,"vcf" VCF or "plink" for bed,bim,fam.}
   \item{memory}{(integer) set memory size, GB}
-  \item{threads}{(integer) specifies the number of computational threads that will be used.}
-  \item{window}{(numeric) specifies the cM length of each sliding window (default: 40).}
-  \item{overlap}{(numeric) specifies the cM length of overlap between adjacent sliding windows(default: 2).}
+  \item{threads}{(integer) specify the number of computational threads that will be used.}
+  \item{window}{(numeric) specify the cM length of each sliding window (default: 40).}
+  \item{overlap}{(numeric) specify the cM length of overlap between adjacent sliding windows(default: 2).}
   \item{workdir}{(character) set working directory}
 }
 

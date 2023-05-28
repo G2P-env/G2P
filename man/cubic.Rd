@@ -8,7 +8,7 @@ Example data for G2P
 \description{
 Maize CUBIC population, after filterion (-indep-pairwise 100 5 0.1 -indep-pairwise 100 5 0.1), remaining 1,404 lines and 9,286 high quality SNPs, coded by 0,1,2. \cr
 
-Phenotypic data involves tree traits "DTT", "PH" and "EW".
+Phenotypic data involves tree traits "DTT" for days to tasseling , "PH" for plant height and "EW" for ear weight.
 }
 \usage{
   data("cubic")
@@ -31,5 +31,5 @@ Jingyun Luo, Chengcheng Wei, Haijun Liu, Shikun Cheng, Yingjie Xiao, Xiaqing Wan
 }
 
 \examples{
-data(cubic)
+data("cubic")
 }

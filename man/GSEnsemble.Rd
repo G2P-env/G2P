@@ -14,21 +14,21 @@ GSEnsemble(predMat, nrandom = 10, evalMethods, by = 0.1, evaluation = T, topAlph
 }
 
 \arguments{
-  \item{predMat}{(numeric, matrix) the prediction results of algorithms which you want to merge, the first column is the real value of trait.}
-  \item{nrandom}{(integer) the repeat number of stacking, default 10.}
+  \item{predMat}{(numeric, matrix) prediction results of algorithms which you want to merge, the first column is the real value of trait.}
+  \item{nrandom}{(integer) repeat number of stacking, default 10.}
   \item{evalMethods}{(character) ensemble base which evaluation methods.}
-  \item{by}{(numeric,(0,1)) the radio window of ensemble, the smaller "by", the higher accuracy of ensemble. Default 0.1.}
+  \item{by}{(numeric,(0,1)) window of ensemble, the smaller "by", the higher accuracy of ensemble. Default 0.1.}
   \item{evaluation}{(logical) if evaluate finalMat with evalMethods, default TRUE.}
-  \item{topAlpha}{(numeric) the parameter of threshold evaluation methods, see also function evaluateGS. In this function, indicates the best ensemble base threshold when evalMethods is threshold methods.}
+  \item{topAlpha}{(numeric) parameter of threshold evaluation methods, see also function evaluateGS. In this function, indicates the best ensemble base threshold when evalMethods is threshold methods.}
 }
 \details{
 The function generates the integrative GS model by linearly combining multiple GS prediction results, the upgrade version of GSMerge. The weight of each individual GS model can be optimized by multiple iteration.
 }
 \value{
 a list:\cr
-\item{BestWeight}{the best weight of methods in all repeat}
-\item{finalMat}{the final matrix cbind predMat with final ensemble score}
-\item{evalRes}{the evaluation results of finalMat with evalMethods}
+\item{BestWeight}{best weight of methods in all repeat}
+\item{finalMat}{final matrix cbind predMat with final ensemble score}
+\item{evalRes}{evaluation results of finalMat with evalMethods}
 \item{weightMat}{a weight matrix including all repeats}
 \item{evalMat}{a evaluation results matrix including all repeats}
 }

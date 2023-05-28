@@ -1,4 +1,4 @@
-\name{GSDataQC {G2P}}
+\name{GSDataQC}
 \alias{GSDataQC}
 
 \title{
@@ -14,8 +14,7 @@ GSDataQC(markers, phenotype, impute = F, filter = F, NABound = 0.8,
 
 \arguments{
   \item{markers}{(numeric, matrix) genotypic data, row represents sample and column represents SNP (feature). Missing (NA) alleles are allowed}
-  \item{phenotype}{(data.frame) the phenotype data. The first column must be the sample name.}
-  \item{pheno}{Phenotypic data frame, the first column describes sample IDs.}
+  \item{phenotype}{(data.frame) phenotypic data. The first column must be the sample name.}
   \item{impute}{(logical) if TRUE, imputation, default FALSE.}
   \item{filter}{(logical) if TRUE, filtering genotypic data with MAF and missing rate.}
   \item{NABound}{(numeric, [0,1]) max missing value percentage.}
@@ -30,10 +29,10 @@ a list of the data quality information.\cr
 \item{Global}{overview of missing value in genotypic data.}
 \item{resMarker}{genotypic data after processing.}
 \item{MAF}{minor allele frequency (MAF) of each SNP.}
-\item{NACountRow}{the number of missing alleles from row perspective (sample).}
-\item{NACountRowPercent}{the missing rate from row perspective (sample).}
-\item{NACountCol}{the number of missing alleles from column perspective (feature SNP).}
-\item{NACountColPercent}{the missing rate from column perspective (feature SNP).}
+\item{NACountRow}{number of missing alleles from row perspective (sample).}
+\item{NACountRowPercent}{missing rate from row perspective (sample).}
+\item{NACountCol}{number of missing alleles from column perspective (feature SNP).}
+\item{NACountColPercent}{missing rate from column perspective (feature SNP).}
 \item{NAIndex}{index of all missing alleles.}
 \item{phenotypeNAIdx}{index of missing phenotypes.}
 }

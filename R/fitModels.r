@@ -326,7 +326,6 @@ fit.RR <- function(trainMarkerMat, trainPheVal, predictMarkerMat, NAImpute = F,t
 }
 
 ################### Modeling and predicting using BRNN#############################
-#' @title Modeling and predicting using Bayesian Regularization Neural Networks(BRNN)
 #' @export fit.BRNN
 #' @import brnn
 fit.BRNN <- function(trainMarkerMat, trainPheVal, predictMarkerMat, NAImpute = F,outputModel = FALSE,verbose=TRUE, neurons=4, epochs=30, cpus = 1, ...){

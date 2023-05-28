@@ -2,7 +2,7 @@
 \alias{predictGS}
 
 \title{
-Performing prediciton with fitted Models.
+Perform prediciton with fitted Models.
 }
 \description{
 The function perform prediction from new inputs with fitted models, including RRBLUP, SVR, SVC, RFR, RFC, LASSO, SPLS and bigRR.
@@ -20,15 +20,15 @@ predictGS(testMat, trainModel,predX = NULL,modelMethods = "SVC")
 
 \value{
 a list:\cr  
-The prediction results of testing sets which predicted through already models.
+The prediction results of test set which predicted through already models.
 }
 
 \examples{
 ## Load example data ##
-data("cbuic")
+data("cubic")
 
 ## Fit RRBLUP model ##
-RRBLUP_model <- GSReModel(markers = Markers[1:200,], pheVal = phenotype[1:200], modelMethods = "RRBLUP")
+RRBLUP_model <- GSReModel(markers = Markers[1:200,], pheVal = pheData$DTT[1:200], modelMethods = "RRBLUP")
 
 ## Predict 201-400 subset of all example data with already RRBLUP model ## 
 res <- predictGS(testMat = Markers[201:400,], trainModel = RRBLUP_model, modelMethods = "RRBLUP")

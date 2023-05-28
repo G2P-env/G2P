@@ -6,7 +6,7 @@ Genotype to phenotype
 }
 
 \description{
-The function fits genomic selection models, performs prediction and exports the prediction value of testing sets. 
+The function fits genomic selection models, performs prediction and exports the prediction value of test set. 
 }
 \usage{
 G2P(markers,data,fix = NULL,trait,trainIdx,predIdx,modelMethods ="BayesA",outputModel = FALSE,NAImpute = FALSE,
@@ -20,13 +20,13 @@ G2P(markers,data,fix = NULL,trait,trainIdx,predIdx,modelMethods ="BayesA",output
 }
 
 \arguments{
-  \item{markers}{(numeric, matrix) genootypic data, row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
-  \item{data}{(data.frame) phenotypic data and other information for data set.}
+  \item{markers}{(numeric, matrix) genotypic data, row represents sample and column represents SNP (feature). Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
+  \item{data}{(data.frame) phenotypic data and other information.}
   \item{fix}{(character, array) names of data that used as fix effects, numeric, NAs are not permitted,}
-  \item{testPheno}{(numeric) the phenotype value of test population individual, default NULL.}
-  \item{trait}{(character) the trait name in data to fit model and perform genotype-to-phenotype prediction.}
+  \item{testPheno}{(numeric) phenotypic value of test set, default NULL.}
+  \item{trait}{(character) trait name to fit model and perform genotype-to-phenotype prediction.}
   \item{trainIdx}{(numeric, array) index of training set in marker and data.}
-  \item{predIdx}{(numeric, array)  index of testing/prediction set in marker and data.}
+  \item{predIdx}{(numeric, array)  index of test/prediction set in marker and data.}
   \item{modelMethods}{(character) 16 alternative models to fit, including "BayesA", "BayesB", "BayesC", "BL", "BRR", "RKHS", "RRBLUP","LASSO", "SPLS", "SVC", "SVR", "RFR", "RFC", "RR", "RKHS", "BRNN"}
   \item{outputModel}{(logical) if TRUE, return the list of trained model and prediction results, default FALSE.}
   \item{NAImpute}{(logical) if true, the missing values in phenotype will be imputed by mean otherwise be removed.}
@@ -85,8 +85,8 @@ G2P(markers,data,fix = NULL,trait,trainIdx,predIdx,modelMethods ="BayesA",output
   }
 }
 \value{
-a list including fitted model and prediction results (outputModel = TRUE).\cr
-\item{model }{details of fitted model}
+a list of fitted models and prediction results (outputModel = TRUE).\cr
+\item{model }{details of fitted models}
 \item{predictRes }{a matrix of prediction results}
 
 a matrix of prediction results (outputModel = FALSE).

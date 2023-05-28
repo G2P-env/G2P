@@ -6,7 +6,7 @@ Models evaluation
 }
 
 \description{
-The function consolidates 13 evaluation metrics to evaluete the performance of genomic selection models.
+The function consolidates 13 evaluation metrics to evaluate the performance of genomic selection models.
 }
 
 \usage{
@@ -15,10 +15,10 @@ G2PEvaluation(realScores, predScores, Probability = FALSE, evalMethod = "RE",
 }
 
 \arguments{
-  \item{realScores}{(numeric,vector) observation values of validation data.}
-  \item{predScores}{(numeric,vector or matrix) prediction values from genomic selection models.}
+  \item{realScores}{(numeric, vector) observation values of validation data.}
+  \item{predScores}{(numeric, vector or matrix) prediction values from genomic selection models.}
   \item{evalMethod}{(character) alternative evaluation metrics, including "pearson", "kendall", "spearman", "MSE", "R2", "RE", "Kappa", "AUC", "AUCpr", "accuracy", "F1", "meanNDCG", "NDCG".}
-  \item{Beta}{(numeric) the parameter of F-measure or F-score, when beta = 1, meaning F1, Default F1.}
+  \item{Beta}{(numeric) the parameter of F-measure or F-score, when beta = 1, meaning F1, default F1.}
   \item{BestIndividuals}{(character) the position of expected phenotype in whole phenotypic data set."top","buttom" or "middle",default "top".}
   \item{topAlpha}{(numeric, array) the proportion of considering excellent samples, default 1:90.}
   \item{globalAlpha}{(logical) if global metrics (pearson, kendall, spearman, MSE and R2) evaluate by threshold (topAlpha),default FALSE.}
@@ -45,10 +45,10 @@ G2PEvaluation(realScores, predScores, Probability = FALSE, evalMethod = "RE",
 }
 \value{
 a list inculding evaluation results with methods which user selected.
-\item{corMethods }{a matrix for global metrics}
+\item{corMethods }{a matrix of global metrics}
 
-    \item{RE }{a matrix for threshold metric RE.}
-    \item{Kappa }{a matrix for threshold metric Kappa.}
+    \item{RE }{a matrix of threshold metric RE.}
+    \item{Kappa }{a matrix of threshold metric Kappa.}
     \item{...}{a matrix for other threshold metrics user selected.}
 }
 \references{

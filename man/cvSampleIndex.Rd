@@ -2,7 +2,7 @@
 \alias{cvSampleIndex}
 
 \title{
-Generate sample index for training set and Testing Set
+Generate sample index for training set and test set
 }
 
 \description{
@@ -12,17 +12,17 @@ This function generates index of samples for N fold cross-validation.
 cvSampleIndex(sampleNum, cross = 5, seed = 1,randomSeed = FALSE)
 }
 \arguments{
-  \item{sampleNum}{The number of samples needed to be partitioned into training and testing sets.}
-  \item{cross}{The fold of cross validation.}
-  \item{seed}{An integer used as the seed for data partition. The default value is 1.}
-  \item{randomSeed}{Logical variable, default FALSE.}
+  \item{sampleNum}{(integer) the number of samples needed to be partitioned into training and test set.}
+  \item{cross}{(integer) the fold of cross validation.}
+  \item{seed}{(integer) the seed for data partition. The default value is 1.}
+  \item{randomSeed}{(logical) variable, default FALSE.}
 }
 
 \value{
-A list and each element including "trainIdx" "testIdx" and "cvIdx"
-\item{trainIdx}{The index of training samples.}
-\item{testIdx}{The index of testing samples.}
-\item{cvIdx}{The cross validation index.}
+A list including "trainIdx" "testIdx" and "cvIdx"
+\item{trainIdx}{index of training samples.}
+\item{testIdx}{index of test samples.}
+\item{cvIdx}{cross validation index.}
 }
 
 \examples{

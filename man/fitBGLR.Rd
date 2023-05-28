@@ -19,10 +19,10 @@ fit.BGLR(trainMarkerMat, trainPheVal, predictMarkerMat, modelMethods,
 \arguments{
   \item{trainMarkerMat}{(numeric, matrix) genotypic data of training set. row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
   \item{trainPheVal}{(numeric, array) the phenotypic value of each sample.}
-  \item{predictMarkerMat}{(numeric, matrix) genotypic data of testing set. row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
+  \item{predictMarkerMat}{(numeric, matrix) genotypic data of test set. row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
   \item{modelMethods}{(character) the model to fit. "BayesA", "BayesB", "BayesC", "BL", "BRR".}
   \item{trainX}{additional data inputs of training sets as fixed effects instead of SNPs inputs only.}
-  \item{predX}{additional data inputs of testing sets as fixed effects instead of SNPs inputs only.}
+  \item{predX}{additional data inputs of test set as fixed effects instead of SNPs inputs only.}
   \item{nIter,burnIn,thin}{(integer) the number of iterations, burn-in and thinning,default nIter 7000,burnIn 500,thin 5.}
   \item{saveAt}{(string) this may include a path and a pre-fix that will be added to the name of the files that are saved as the program runs,default "".}  
   \item{S0,df0}{(numeric) the scale parameter for the scaled inverse-chi squared prior assigned to the residual variance, only used with Gaussian outcomes.Default S0 NULL,df0 = 5.}
@@ -37,9 +37,9 @@ fit.BGLR(trainMarkerMat, trainPheVal, predictMarkerMat, modelMethods,
 \value{
 a list including fitted model and prediction results (outputModel = TRUE).\cr
 \item{model }{details of fitted model}
-\item{predictRes }{prediction results of testing set}
+\item{predictRes }{prediction results of test set}
 
-a array of prediction results (outputModel = FALSE).
+an array of prediction results (outputModel = FALSE).
 
 }
 \references{

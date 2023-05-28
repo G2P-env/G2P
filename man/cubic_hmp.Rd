@@ -3,7 +3,7 @@
 \docType{data}
 
 \title{
-    Example data in Hapmap format for G2P
+Example data in Hapmap format for G2P
 }
 
 \description{

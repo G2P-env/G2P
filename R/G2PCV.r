@@ -1,5 +1,5 @@
 #####################################  cross validation for complex genomic selection with fix ####################################
-#' @export G2P
+#' @export G2PCrossValidation
 #' @import parallel pbapply
 G2PCrossValidation <-function(cvSampleList = NULL,cross = 10,times = 1,seed = 1,cpus = 1, markers, data, trait,fix = NULL,
                                modelMethods ="SVC", outputModel = FALSE,NAImpute = FALSE,

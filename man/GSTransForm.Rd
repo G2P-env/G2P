@@ -5,7 +5,7 @@
 Genotypic data format conversion
 }
 \description{
-The function can only be used in G2P-sif.By calling other external software like VCFtools Plink TASSEL etc for the transition of genotype format
+By calling other external software like VCFtools Plink TASSEL etc for the transition of genotype format.
 }
 \usage{
 GSTransForm(pattern, input, output, workdir = "./", memory = 8 )

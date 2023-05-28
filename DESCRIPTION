@@ -5,7 +5,7 @@ Author: Qian Wang, Shan Jiang, Tong Li, Zhixu Qiu, Jun Yan, Ran Fu, Chuang Ma, X
 Maintainer: Qian Cheng <qchengray@gmail.com>
 Depends: R (>= 3.6.0),ggplot2, brnn, glmnet, spls, pls, e1071, BGLR, rrBLUP, randomForest, hglm, parallel, hglm.data, pROC, PRROC, STPGA, reshape, reshape2, pbapply, qtlDesign 
 Imports: grid, stats, scales
-Description: G2P is an integrated R toolkit to facilitate genotype-to-phenotype prediction for GS in crops. The G2P toolkit accepts multiple formats of input genotypic and phenotypic data, and provides a comprehensive set of analysis functions for quality control, filtration and training/testing data formulation. G2P incorporates 16 state-of-the-art GS methods and 13 evaluation metrics, thereby decreasing coding burden and increasing flexibility for model construction, optimization, evaluation.
+Description: G2P is an integrated R toolkit to facilitate genotype-to-phenotype prediction for GS in crops. The G2P toolkit accepts multiple formats of input genotypic and phenotypic data, and provides a comprehensive set of analysis functions for quality control, filtration and training/test data formulation. G2P incorporates 16 state-of-the-art GS methods and 13 evaluation metrics, thereby decreasing coding burden and increasing flexibility for model construction, optimization, evaluation.
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

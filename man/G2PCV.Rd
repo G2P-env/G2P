@@ -5,7 +5,7 @@
 Cross-validation for genomic selection
 }
 \description{
-The function achieve cross-validation for integrated GS models.
+The function can achieve cross-validation for integrated GS models.
 }
 \usage{
 G2PCrossValidation(cvSampleList = NULL,cross = 10,times = 1,seed = 1,cpus = 1,markers,data,trait, 
@@ -21,9 +21,9 @@ G2PCrossValidation(cvSampleList = NULL,cross = 10,times = 1,seed = 1,cpus = 1,ma
 }
 
 \arguments{
-  \item{cvSampleList}{(list) the specified cross-validation combination, or a list from function \code{\link{cvSampleIndex}}.Default NULL and execute a random grouping.}
-  \item{cross}{(integer) the fold of N-fold cross-validation. For example cross = 10 for 10-fold cross-validation.}
-  \item{times}{(integer) the times of repetition. For example, cross = 10 and times = 5 for five times 10-fold cross-validation.}
+  \item{cvSampleList}{(list) specified cross-validation combination, or a list from function \code{\link{cvSampleIndex}}. Default NULL and execute a random grouping.}
+  \item{cross}{(integer) fold of N-fold cross-validation. For example cross = 10 for 10-fold cross-validation.}
+  \item{times}{(integer) times of repetition. For example, cross = 10 and times = 5 for five times 10-fold cross-validation.}
   \item{seed}{(integer) random seed for sampling of cross-validation.}
   \item{cpus}{(integer) number of cpu cores to parallelizing cross-validation(only available in UNIX-like operating systems), default 1.}
   \item{markers}{(numeric, matrix) row represents sample and column represents SNP (feature).Genotypes generally be coded as {0,1,2};0 represents AA(homozygote),2 represents BB(homozygote) and 1 represents AB(heterozygote); missing (NA) alleles are not allowed.}
@@ -66,7 +66,7 @@ G2PCrossValidation(cvSampleList = NULL,cross = 10,times = 1,seed = 1,cpus = 1,ma
 
 \value{
 a list:
-The prediction results of input GS methods with cross validation.
+The prediction results of input GS methods with cross-validation.
 \item{CV1 }{prediction matrix of first time CV}
 \item{CV2 }{prediction matrix of second time CV}
 \item{CV\emph{n}... }{prediction matrix of \emph{n}th time CV}
